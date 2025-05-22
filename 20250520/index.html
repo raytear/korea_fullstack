@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>20250520 수업내용</title>       
+    </head>
+    <!-- Interaction을 위한 태그 -->
+    <body>
+        <!-- select - 여러개중 한개를 선택할 수 있도록 리스트를 보여주는 입력 dropdown 만듦-->
+        <select size="3">
+            <!-- option - dropdown에서 한 개의 항목 표기 -->
+            <!-- size - 한 눈에 볼 수 있는 메뉴의 개수 제한 -->
+            <!-- multiple - 여러개를 선택할 수 있도록 하는 속성 --> 
+            <option>사과</option>
+            <option>포도</option>
+            <option>오렌지</option>
+            <option>망고</option>
+            <option>수박</option>
+            <option>파인애플</option>
+        </select>
+
+        <select>
+            <!-- selected - 처음 선택되어 있는 option을 선택
+            1개의 selected마다 1개의 option만 해당 속성 유지
+            단, multiple인 경우 여러개 작성 가능 -->
+            <option>사과</option>
+            <option>포도</option>
+            <option selected>오렌지</option>
+            <option>망고</option>
+            <option>수박</option>
+            <option>파인애플</option>
+        </select>
+
+        <!-- optgroup - 드랍다운에서 option을 그대로 쓰지않고 그룹을 만들때 사용 -->
+        <!-- label - 비어있는 공백에 해당 그룹의 명칭 지정 -->
+        <select>
+            <optgroup label="메뉴 1">
+                <option>-1</option>
+                <option>-2</option>
+            </optgroup>
+            <optgroup label="메뉴 2">
+                <option>-1</option>
+                <option>-2</option>
+        </select>
+        
+        <!-- datalist - select 대신 사용하는 드랍다운 태그. data로 사용되기 위한 드랍다운임을 알려줌 -->
+        <!-- id - 해당하는 datalist 태그를 지칭하기위한 속성 -->
+        <input list="data"/>
+        <datalist id="data">
+            <option>사과</option>
+            <option>사과청</option>
+            <option>사과주스</option>
+            <option>사과에이드</option>
+        </datalist>
+
+        <!-- a - 외부 경로로 이동하기 위한 태그 -->
+        <!-- href - 참조할 대상 주소 -->
+        <a href="https://www.naver.com">네이버</a>
+        <br/>
+
+        <!-- target - 대상 주소로 링크 이동을 할 때 어떤 방식으로 이동할지 결정하는 속성 -->
+        <!-- _self - 현재 탭 이동 -->
+        <!-- _blank - 새탭 생성 후 이동 -->
+        <!-- _top / _parent - iframe 태그 내부에있는 페이지를 이동시 상위 페이지 이동 -->
+        <a href="https://www.naver.com" target="_blank">네이버</a>
+
+        <!-- <input/> - 키보드 입력 또는 단순 클릭으로 할 수 없는 입력을 모두 만들고 제어하기위한 태그 -->
+        <!-- type 
+            default value - text
+            text - 일반 글자 입력
+            password - 글자 입력 시 보이지 않게 처리 
+            color - 색상 입력 -->
+        <input/>
+        <!-- autofocus - 처음 웹페이지 도착 시 포커싱. 웹페이지 당 1개씩만 존재 -->
+        <input type="password" autofocus/>
+        <input type="color"/>
+
+        <!-- date - 날짜 입력 -->
+        <input type="date"/> <!-- 년/월/일 -->
+        <input type="datetime"/>
+        <input type="datetime-local"/> <!-- 현지 날짜 및 시간 -->
+        <input type="month"/> <!-- 연/월 -->
+        <input type="time"/> <!-- 시간 -->
+        <input type="week"/> <!-- 연/월/주 -->
+
+        <input type="number"/> <!-- 숫자만 입력 --> 
+        <input type="button"/> <!-- 일반 버튼 -->
+        <input type="reset"/> <!-- 특수 버튼 - 데이터 초기화 -->
+        <input type="submit"/> <!-- 특수 버튼 - 제출 -->
+
+        <input type="radio"/> <!-- 여러가지 중 1개 선택 -->
+        <input type="radio"/> 
+        <input type="radio"/> 
+        <input type="radio"/> 
+        <input type="checkbox"/> <!-- 여러가지 중 여러개 선택-->
+        <input type="checkbox"/> 
+        <input type="checkbox"/> 
+        <input type="checkbox"/>      
+
+        <input type="file"/> <!-- 파일 선택 -->
+
+        <!-- name - 해당하는 input이 어떤 데이터인지 이름지어줌. radio나 checkbox등 그룹화 -->
+        <!-- value - input 태그에 기본값 입력 -->
+        <!-- checked - 해당하는 checkbox나 radio가 처음에 선택되어있도록 하는 속성 -->
+        <!-- id - 해당하는 태그를 정확히 1개 지정하기위해 사용 -->
+
+        <!-- label - 해당하는 태그에 적힌 텍스트가 input과 연동 -->
+        <!-- for - 해당하는 input을 위한 label -->
+        <input type="radio" name="habbit"/>
+        <input type="radio" name="habbit"/> 
+        <input type="radio" name="habbit"/> 
+        <input type="radio" name="habbit" checked/> 
+        <input type="checkbox" name="gender" id="male" value="male" checked/><label for="male">남성</label>
+        <input type="checkbox" name="gender" id="female" value="female"/><label for="female">여성</label>
+        <input type="checkbox" name="gender" id="nonbinary" value="nonbinary"/><label for="nonbinary">무성</label>
+        <input type="checkbox" name="gender" id="third-male" value="third-male"/><label for="third-male">제3의 성</label>
+
+        <!-- textarea - 여러줄의 텍스트를 입력 -->
+        <!-- rows, cols - 해당하는 textarea의 가로 크기와 세로 크기를 지정. row(몇 줄), cols(몇 글자)-->
+        <textarea rows="10" cols="10"></textarea>
+
+
+    </body>
+</html>

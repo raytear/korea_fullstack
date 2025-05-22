@@ -1,0 +1,59 @@
+<!-- ### 연습 문제 1: 어린이 전용 교육 사이트
+
+**사이트 파일명** - `kids_education.html`
+
+**상황 설명**
+어린이들을 위한 교육 사이트를 만들고자 합니다. 이 사이트는 **전연령 전용 콘텐츠**로, 교육적이고 건강한 콘텐츠만을 제공합니다. 이 사이트에 필요한 기본적인 **meta** 정보와 **OpenGraph** 및 **Twitter Card** 메타 태그를 추가해야 합니다. 아래의 조건을 참고하여 적절한 메타 데이터를 작성하세요.
+
+**필수 사항:**
+
+1. **웹페이지 제목**은 "어린이 교육 사이트"로 설정하세요.
+2. **웹페이지 인코딩 방식**은 UTF-8로 설정하세요.
+3. **사이트 설명**은 "어린이들을 위한 교육적인 콘텐츠를 제공합니다."로 작성하세요.
+4. **저자 정보**는 "John Doe"로 설정하세요.
+5. **저작권**은 "2025 John Doe, All rights reserved."로 표기하세요.
+6. **검색엔진에 표시되는지 여부**는 "index"로 설정하고, 링크는 "follow"로 설정하세요.
+7. **키워드**는 "어린이 교육, 온라인 학습, 교육 사이트"로 설정하세요.
+8. **SNS 카드 정보**
+
+   * **OpenGraph**
+
+     * 제목: "어린이 교육 사이트"
+     * 설명: "어린이들을 위한 다양한 교육 자료를 제공합니다."
+     * 이미지 URL: "[https://example.com/og\_image.jpg](https://example.com/og_image.jpg)"
+     * 웹사이트 URL: "https\://kids\_education.com"
+   * **Twitter Card**
+
+     * 제목: "어린이 교육 사이트"
+     * 설명: "어린이들을 위한 다양한 교육 자료를 제공합니다."
+     * 이미지 URL: "[https://example.com/twitter\_image.jpg](https://example.com/twitter_image.jpg)"
+     * 카드 유형: "summary\_large\_image"
+
+**작성 요구사항:**
+위의 조건을 충족하는 **head 태그** 내의 메타데이터와 관련된 태그를 작성하세요. `meta` 태그를 적절하게 사용하고, **OpenGraph** 및 **Twitter Card**의 메타 태그도 포함해야 합니다. -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="robots" content="index,follow"/>
+        <title>어린이 교육 사이트</title>
+        <meta name="title" content="어린이 교육 사이트"/>
+        <meta name="description" content="어린이들을 위한 교육적인 콘텐츠를 제공합니다."/>
+        <meta name="author" content="John Doe"/> <!-- 현재 웹페이지를 작성한 저자를 표기 -->
+        <meta name="copyright" content="2025 John Doe, All rights reserved."/> <!--저작권 정보를 표기-->
+        <meta name="keywords" content="어린이 교육, 온라인 학습, 교육 사이트"/> <!--검색엔진에서 이 웹페이지를 표기해야하는 상황에 필요한 키워드를 작성-->
+        <meta name="rating" content="general"/><!--콘텐츠의 연령별에 따라 구분, 기본이 general, 성인용일 경우만 mature 명시--> 
+
+        <meta property="og:title" content="어린이 교육 사이트"/> 
+        <meta property="og:description" content="어린이들을 위한 다양한 교육 자료를 제공합니다."/>
+        <meta property="og:image" content="https://example.com/og_image.jpg"/>
+        <meta property="og:url" content="https\://kids\_education.com"/>
+
+        <meta name="twitter:title" content="어린이 교육 사이트"/>
+        <meta name="twitter:description" content="어린이들을 위한 다양한 교육 자료를 제공합니다."/>
+        <meta name="twitter:image" content="https://example.com/twitter_image.jpg"/>
+        <meta name="twitter:card" content="summary\_large\_image"/>        
+    </head>
+    <body></body>
+</html>

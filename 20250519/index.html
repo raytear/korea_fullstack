@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>20250519 수업내용</title>       
+    </head>
+    <!-- 구조화 태그 -->
+    <body>
+        <!-- table - 표를 만드는 태그 -->
+        <!-- <table> <thead><tr><th></th></tr></thead> <tbody><tr><td></td></tr></tbody> <tfoot><tr><td></td></tr></tfoot> </table> -->
+        <!-- border - 표 외곽선 두께 지정 -->
+        <!-- cellspacing - 칸과 칸 사이의 간격 지정 -->
+        <!-- cellpadding - 칸 자체의 간격 지정 -->
+        <table border="1px" cellspacing="10px" cellpadding="20px">
+            <thead>과일의 가격표</thead> <!-- table head - 테이블의 헤더 정보나 제목 작성(테이블 위쪽 정보) -->
+            <tbody>
+                <tr> <!-- table row - 테이블의 표 한 줄 표기 -->
+                    <th>상품명</th> <!-- th - 표 한 칸 중 제목 표기 -->
+                    <th>가격</th>
+                </tr>
+                <!-- align - 칸의 텍스트 정렬 방식 지정 -->
+                <!-- left(왼쪽), center(가운데), right(오른쪽) 정렬 -->
+                <tr>
+                    <td align="center">사과</td> <!-- td - 표 한칸 중 정보 표기 -->
+                    <td align="right">5000원</td>
+                </tr>
+                <tr>
+                    <td align="center">포도</td>
+                    <td align="right">4500원</td>
+                </tr>
+                <tr>
+                    <td align="center">화과산 돌 원숭이가 좋아하는 바나나</td>
+                    <td align="right">50000000원</td>
+                </tr>
+                <!-- rowspan- 여러줄을 차지, colspan - 여러칸을 차지 -->
+                <tr>
+                    <td align="right" colspan="2">125000원</td>                    
+                </tr>
+                <tr>
+                    <td align="right" rowspan="2">250000원</td>
+                </tr>
+            </tbody><!-- table body - 테이블의 본문 작성 -->
+            <tfoot>* 2025년 5월 1일 기준</tfoot> <!-- table foot - 테이블의 푸터 정보나 설명(테이블 아래쪽 정보) -->
+        </table>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+        <details> <!-- 필수적인 정보를 작성해둘때 해당 내용을 처음엔 보이지 않다가 필요할때 사용자가 직접 볼 수 있도록 함 -->
+            <summary>세부정보 요약본</summary> <!-- details 태그에서 타이틀 부분을 표기 -->
+            세부내용
+        </details>
+        
+        <details open> <!-- open - details 태그가 처음부터 열려있도록 지정 -->
+            <summary>세부정보 요약본</summary>
+            세부내용
+        </details>
+
+        <!-- Defined List - 제목과 본문을 함께 가짐. 정의된 리스트 -->
+        <!-- 1개의 dl 안에는 1개의 dt와 1개의 dd만 넣어야 함 -->
+        <dl>
+            <dt>제목</dt> <!-- Defined Title -->
+            <dd>본문</dd> <!-- Defined Description -->
+        </dl>
+
+        
+        <!-- Ordered List - 정보들을 순서대로 나열할때 특정 내용과 연관성이 있음을 숫자와 탭으로 표기 -->
+        <ol type="A"> <!-- 매겨지는 번호의 형태를 지정 -->
+            <!-- 1(숫자), a/A(소문자/대문자), i/I(로마자 소/대문자) -->
+            <li>첫번째 칸 내용</li> <!-- List Item -->
+            <li>두번째 칸 내용
+                <ol>
+                    <li>두번째 칸 첫번째 내용</li> <!-- 구조 안에 새로운 구조 생성 가능 -->
+                    <li>두번째 칸 두번째 내용</li>
+                </ol>
+                내용 추가
+                <!-- start - 앞의 내용과 이어지는 내용을 적고 싶을 때 시작하는 번호를 지정 -->
+                <!-- reversed - 역순으로 시작 -->            
+                <ol start="3">
+                    <li>두번째 칸 세번째 내용</li> 
+                    <li>두번째 칸 네번째 내용</li>
+                </ol>                
+            </li>            
+            <li>세번째 칸 내용</li>
+                <!-- Unordered List - 순서가 필요없는 구조화(순서가 점으로 표기) -->
+                <!-- disc - 꽉찬 원, circle - 빈 원, square - 사각형, none - 없음 -->
+                <ul type = "circle">
+                    <li>세번째 칸 첫번째 내용</li>
+                    <li>세번째 칸 두번째 내용</li>
+                </ul>
+            <li>네번째 칸 내용</li>
+        </ol>
+        <pre>지금까지 배운 내용들은</pre>
+        <video></video>
+        <pre>전부 다</pre>
+        <pre>위에서 아래로 순서대로 출력</pre>        
+    </body>
+</html>
