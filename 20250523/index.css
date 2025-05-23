@@ -1,0 +1,47 @@
+tr td{background-color: blue;}
+tr:nth-child(even) td:nth-child(even),
+tr:nth-child(odd) td:nth-child(odd){
+    background-color: red;
+}
+/* 
+tr:nth-child(even) td:nth-child(even),
+tr:nth-child(odd) td:nth-child(odd){
+    background-color: red;
+}
+
+tbody :not(tr:nth-child(even) td:nth-child(even),
+tr:nth-child(odd) td:nth-child(odd)){
+    background-color: blue;
+} */
+
+input:focus {
+    background-color: palegreen;
+}
+
+input:hover {
+    background-color: palegreen;
+}
+
+input:active {
+    background-color: palegreen;
+}
+
+input[name=id] {
+    background-color: yellow;
+}
+input[type=password] {
+    background-color: aqua;
+}
+input[type=password] + input[type=password] {
+    background-color: bisque;
+}
+#test {
+    background-color: yellow;
+}
+
+.red {
+    background-color: red; 
+}
+.red {
+    background-color: blue;
+}
