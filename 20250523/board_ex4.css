@@ -1,0 +1,36 @@
+tr td{background-color: blue;}
+
+/* tr:nth-child(1) :nth-last-child(1)
+{background-color: red;}
+tr:nth-child(1) :nth-last-child(3)
+{background-color: red;}
+tr:nth-child(1) :nth-last-child(5)
+{background-color: red;}
+tr:nth-child(2) :nth-last-child(2)
+{background-color: red;}
+tr:nth-child(2) :nth-last-child(4)
+{background-color: red;}
+tr:nth-child(3) :nth-last-child(3)
+{background-color: red;}
+tr:nth-child(4) :nth-last-child(2)
+{background-color: red;}
+tr:nth-child(4) :nth-last-child(4)
+{background-color: red;}
+tr:nth-child(5) :nth-last-child(1)
+{background-color: red;}
+tr:nth-child(5) :nth-last-child(3)
+{background-color: red;}
+tr:nth-child(5) :nth-last-child(5)
+{background-color: red;} */
+
+tr:nth-child(1) td:nth-child(1),
+tr:nth-child(2) td:nth-child(2),
+tr:nth-child(3) td:nth-child(3),
+tr:nth-child(4) td:nth-child(4),
+tr:nth-child(5) td:nth-child(5),
+
+tr:nth-child(1) td:nth-child(5),
+tr:nth-child(2) td:nth-child(4),
+tr:nth-child(4) td:nth-child(2),
+tr:nth-child(5) td:nth-child(1)
+{background-color: red;}
