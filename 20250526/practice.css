@@ -1,12 +1,45 @@
-#nav {
-    line-height: 20px;
+
+
+footer {
+    background-color: darkblue;
+    color: white;
+    text-align: center;
+    font-size: 14px;
 }
 
-#hd {        
+h2 {
+    font-weight: bolder;
+    font-size: 24px;
+}
+
+main {
+    background-color: lightgrey;
+    color: #333333;
+    font-size: 16px;
+}
+
+a:hover{color:red;}
+
+nav ul li{
+    margin-bottom: 20px;
+}
+
+h1 {        
     text-align: center;
     font-size: 36px;
 }
 
-#head {
+header {
     background-color: skyblue;
+}
+
+body {
+    font-family: 'Freesentation-9Black', sans-serif;
+}
+
+@font-face {
+    font-family: 'Freesentation-9Black';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
 }

@@ -1,48 +1,131 @@
+<!-- 
+[CSS 속성 (Attribute)]
+- CSS 속성은 Selector로 선택한 태그 내부에 원하는 디자인을 적용하는 방식
+
+- Selector는 '태그 자체'가 아니라 '태그의 범위'를 선택
+- 상위 태그에 적용된 속성은 별도 지정하지 않는 한, 하위 태그에 자동 상속
+- 작성법: <code>속성명: 값;</code> 형식으로 작성
+- 속성명은 kebab-case 사용(예: <code>background-color</code>)
+-->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>20250526 수업내용 - CSS 속성(Attribute)</title>
+        <!-- CSS 속성 (Attribute) -->
+        <title>20250526 수업정리</title>
         <link rel="stylesheet" href="./index.css"/>
     </head>
     <body>
-        <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ab asperiores, veniam tempora quam ea quaerat sint dicta minus explicabo saepe repudiandae ad provident exercitationem? Voluptates illum illo distinctio corrupti?
-        </div>
-        <div>
-            <a href="#">링크</a>
-        </div>
-        <!-- Attribute - Selector로 선택한 태그 "내부에" 원하는 속성 디자인을 가함-->
-        <!-- Selector - "해당하는 태그"를 선택하는게 아니라 "해당하는 태그의 범위"를 선택-->
-        <h1 id="test">폰트 테스트
-            <span>새로운 태그</span> <!-- 상위 태그에 적용된 정보는 하위 태그에 자동 적용 -->
-        </h1>
-        <h1>폰트 테스트</h1>
-        
-        <!-- 속성 작성법
-            - AttributeName: Value; 식으로 ;으로 구분해서 작성
-            - 이름은 snake-case 로 작성 
-            - ex) background color → background-color
-                  font size → font-size -->
+        <h1>CSS 속성 (Attribute)</h1>
+        <h2>텍스트 관련 속성</h2>
 
-        <!-- 글자 관련 CSS 속성 -->
-        # font-family
-        - 폰트 변경 속성
-        - 작성법 - font-family: 폰트이름, 폰트이름;
-        - 주의사항
-        당연히 "현재 PC"에 설치되지 않은 폰트는 적용이 안된다
-        보편적으로 설치된 폰트를 많이 이용
+        <h3>font-family</h3>
+        <p>폰트를 설정하는 속성</p>
+        <ul>
+            <li>작성법: <code>font-family: 폰트이름, 폰트이름;</code></li>
+            <li>PC에 설치된 폰트만 사용 가능</li>
+            <li>여러 폰트를 순서대로 지정 가능 (앞 폰트가 없을 시 뒤 폰트 사용)</li>
+            <li>영문/한글/기타 언어 순으로 지정하는 것이 일반적</li>
+        </ul>
 
-      설치된 기본 폰트를 사용하거나 @font-face와 함께 이용
-
-  @font-face
-    속성값이 아님
-    하나의 그룹으로써 외부에 Network에 존재하는 폰트를 자동으로 다운받아서 이용하게하는 기능
-    작성법
-      @font-face {
+        <h3>@font-face</h3>
+        <p>외부 폰트를 불러오는 기능 (속성 아님)</p>
+        <pre>@font-face {
         font-family: '폰트이름';
-        src: url( 외부폰트 URL );
-      }
+        src: url(폰트URL);
+        }</pre>
+        <ul>
+            <li>외부 폰트를 자동 다운로드하여 적용</li>
+            <li>폰트 저작권 확인 필수</li>
+        </ul>
+
+        <h3>font-size</h3>
+        <p>글자 크기를 지정하는 속성</p>
+        <p><strong>브라우저 기본값:</strong>
+        대부분의 브라우저 (Chrome, Firefox, Edge, IE 포함)에서 기본 <code>html</code> 요소의 <code>font-size</code>는 <strong>16px</strong>(<code>1rem = 16px</code> 기준으로 배수 계산)</p>
+        <ul>
+            <li>px: 고정값</li>
+            <li>em: 상위 요소 기준 배율</li> <!-- 5em으로 5배 배율 단위를 지정 -->
+            <li>rem: html 기준 배율</li> <!-- 5rem으로 5배 배율 단위를 지정 -->
+            <li>%: em과 유사 (비율)</li> <!-- 150% 로 1.5배 배율 단위를 지정 -->
+            <li>vw: 뷰포트 너비 기준</li> <!-- 100vw -> 화면의 100% -->
+            <li>vh: 뷰포트 높이 기준</li> <!-- 100vh -> 화면의 100% -->
+        </ul>
+
+        <h3>font-weight</h3>
+        <p>글자 굵기 지정</p>
+        <ul>
+            <li>숫자: 100~900</li>
+            <li>문자: lighter, bold, bolder</li>
+        </ul>
+
+        <h3>font-style</h3>
+        <p>글자 스타일(기울기) 지정</p>
+        <ul>
+            <li>normal, italic, oblique</li>
+        </ul>
+
+        <h3>text-decoration</h3>
+        <p>문장에 줄을 긋는 속성</p>
+        <ul>
+            <li>none: 없음</li>
+            <li>underline: 밑줄</li>
+            <li>overline: 윗줄</li>
+            <li>line-through: 취소선</li>
+        </ul>
+
+        <h3>color</h3>
+        <p>글자 색상 지정</p>
+        <ul>
+            <li>색상 이름: red, blue, green 등</li>
+            <li>16진수: #fff00f 등</li>
+            <li>rgb: rgb(255, 255, 0)</li> <!-- 색상 함수(10진수 max 255) -->
+            <li>rgba: rgba(255, 255, 0, 0.5)</li> <!-- 색상 함수, alpha(투명도) 포함(실수 max 1.0) -->
+            <li>hsl: hsl(255, 255, 0)</li> <!-- hue, saturation, lightness를 이용하여 색상 표기 -->
+            <li>oklch: oklch(% 0.1 150)</li> <!-- hsl을 조금더 친화적으로 발전시킨 색상 체계 -->
+        </ul>
+
+        <h3>text-align</h3>
+        <p>글자 정렬</p>
+        <ul>
+            <li>left, center, right</li>
+        </ul>
+
+        <h3>line-height</h3>
+        <p>줄 간격 설정</p>
+
+        <h3>word-spacing</h3>
+        <p>단어 사이 간격 설정</p>
+
+        <h3>letter-spacing</h3>
+        <p>글자 사이 간격 설정</p>
+
+        <h3>text-indent</h3>
+        <p>문장 첫 줄 들여쓰기</p>
+
+        <h3>white-space</h3>
+        <p>줄바꿈 제어</p>
+        <ul>
+            <li>normal: 기본 줄바꿈 허용</li>
+            <li>nowrap: 줄바꿈 제거</li>
+        </ul>
+
+        <h3>text-overflow</h3>
+        <p>줄바꿈이 없을 때 말줄임 처리</p>
+        <ul>
+            <li>clip: 자르기</li>
+            <li>ellipsis: 말줄임표 (...)</li>
+            <li>주의: <code>white-space: nowrap</code> 및 <code>overflow: hidden</code> 조건 필요</li>
+        </ul>
+
+        <h3>line-break</h3>
+        <p>어떤 기준으로 줄을 나눌지 결정</p>
+        <ul>
+            <li>normal, auto: 띄어쓰기 단위로 줄바꿈</li>
+            <li>loose: 띄어쓰기 외의 위치에서도 줄바꿈 가능</li>
+            <li>anywhere: 어디서든 줄바꿈 허용</li>
+        </ul>
     </body>
 </html>

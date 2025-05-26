@@ -1,31 +1,57 @@
+<!--
+[Request 태그]
+- 사용자가 입력한 데이터를 서버에 전송하기 위해 사용하는 HTML 태그
+-->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>20250521 수업내용</title>       
+        <!-- request tag -->
+        <title>20250521 수업정리</title>       
     </head>
-    <!-- request tag -->
     <body>
-        <!-- action - 입력한 내용을 어느 주소로 요청할지를 결정 -->
-        <!-- Protocol + Domain - 현재 보고있는 웹페이지를 요청한 서버와 다른 서버로 요청-->
-        <!-- /path/to - path만 적는 경우, 현재 보고있는 웹페이지를 요청한 서버에게 요청-->
+    <h1>Request 태그</h1>
+
+        <h2>1. form - 서버에 정보 요청</h2>
+        <p>form 태그는 내부 input 등의 입력 값을 서버로 전송하는 데 사용</p>
+
+        <h3>주요 속성</h3>
+        <ul>
+            <li><strong>action</strong>: 데이터를 보낼 대상 주소</li>
+            <li><strong>method</strong>: 데이터를 보내는 방식 (GET / POST)</li>
+            <li><strong>enctype</strong>: 데이터 인코딩 방식</li>
+        </ul>
+
+        <h3>action 예시</h3>
+        <ul>
+            <li>https://www.naver.com/path/to (Protocol + Domain 포함 → 다른 서버로 요청)</li>
+            <li>/path/to (현재 웹페이지와 같은 서버에 요청)</li>
+        </ul>
+
+        <h3>method 예시</h3>
+        <ul>
+            <li><strong>GET</strong>: 주소에 데이터를 포함 (예: ?a=b&c=d)</li>
+            <li><strong>POST</strong>: 데이터를 Body 내부에 포함 (주소에 노출되지 않음)</li>
+        </ul>
+
+        <h3>enctype 예시</h3>
+        <ul>
+            <li><code>application/x-www-form-urlencoded</code>: 기본값, 텍스트 전송</li>
+            <li><code>multipart/form-data</code>: 파일 전송 시 사용</li>
+        </ul>
+
+        <h2>2. form 예시</h2>
+
+        <h3>로그인 요청 (GET 방식)</h3>
         <form action="https://www.naver.com/path/to">
-            <input name="id" type="text"/>
-            <input name="pw" type="password"/>
-            
-            <!-- button - 이미지 버튼 등을 만들 수 있도록 따로 만들어진 태그 -->
-            <!-- button/reset/submit - 버튼의 종류를 지정 -->
+            <input name="id" type="text" placeholder="아이디"/>
+            <input name="pw" type="password" placeholder="비밀번호"/>
             <button type="submit">로그인</button>
-        </form>        
-        <!-- method - 서버에 전달할 정보를 어떻게 Packaging할지, 서버에서 받아온 정보를 어떻게 해체할지를 결정 -->    
-        <!-- get 
-        - 일반/기본요청, 전달하는 정보를 주소에 포함 
-        https://www.naver.com/path/to?a=b&c=d
-        ? 뒤에 정보를 포함시키는 구조(Query String)
-        각각의 정보는 &로 분할 -->
-        <!-- post - 특수요청
-        Query String 없이 내부에 Body에 정보를 포함. 일반적인 URL에서는 확인 불가능 -->
+        </form>
+
+        <h3>검색 요청 (GET 방식, 필드셋 포함)</h3>
         <form action="https://search.naver.com/search.naver" method="get">
             <input name="where" value="nexearch" type="hidden"/>
             <input name="sm" value="top_sug.pre" type="hidden"/>
@@ -35,20 +61,45 @@
             <input name="ie" value="utf8" type="hidden"/>
             <input name="ackey" value="gs54pjbq" type="hidden"/>
 
-            <!-- fieldset - input, button, form 태그등을 구분짓기 위해 외곽선을 그음 -->
-            <!-- legend - fieldset의 제목 지정 -->
-            <fieldset><legend>검색어</legend>
-            <input name="query" type="text"/>
+            <fieldset>
+                <legend>검색어</legend>
+                <input name="query" type="text" placeholder="검색어 입력"/>
             </fieldset>
             <button type="submit">검색</button>
-            <!-- enctype - 정보를 어떤 방식으로 압축해서 전달할지 결정(encrypt type) -->
-            <!-- application/x-www-form-urlencoded 
-                - 기본값, GET, POST 방식에서 텍스트로 정보 전달-->
-            <!-- multipart/form-data
-                - POST 방식을 사용해야만하는 원본 데이터 전달. 이걸 사용해야만 file 업로드 가능 -->
-            <form action="https://redd.it/new.json/" method="post" enctype="multipart/form-data"></form>
         </form>
 
+        <h3>파일 업로드 (POST + multipart/form-data)</h3>
+        <form action="https://redd.it/new.json/" method="post" enctype="multipart/form-data">
+            <input type="file" name="uploadFile"/>
+            <button type="submit">업로드</button>
+        </form>
 
+        <!-- enctype - 정보를 어떤 방식으로 압축해서 전달할지 결정(encrypt type) -->
+        <!-- application/x-www-form-urlencoded 
+            - 기본값, GET, POST 방식에서 텍스트로 정보 전달-->
+        <!-- multipart/form-data
+            - POST 방식을 사용해야만하는 원본 데이터 전달. 이걸 사용해야만 file 업로드 가능 -->
+
+        <h2>3. button</h2>
+        <ul>
+            <li><code>type="submit"</code>: 전송</li>
+            <li><code>type="reset"</code>: 입력 초기화</li>
+            <li><code>type="button"</code>: 일반 버튼 (JS에서 동작 지정)</li>
+        </ul>
+
+        <h3>button 예시</h3>
+        <button type="submit">제출</button>
+        <button type="reset">초기화</button>
+        <button type="button">버튼</button>
+
+        <h2>4. fieldset / legend - 입력 그룹화</h2>
+        <p>fieldset: input, button, form 태그등을 구분짓기 위해 외곽선을 그음,
+        <br/>legend: fieldset의 제목 지정</p>
+
+        <pre><fieldset>
+    <legend>회원가입</legend>
+    <input type="text" name="username"/>
+    <input type="password" name="pw"/>
+    </fieldset></pre>
     </body>
 </html>

@@ -1,37 +1,92 @@
+<!--
+[멀티미디어 태그]
+HTML에서 이미지, 비디오, 오디오, 외부 콘텐츠 등을 사용자에게 보여주는 방법
+
+[이미지 관련 태그]
+<img>
+- HTML에 이미지를 삽입하는 기본 태그
+- src: 이미지 파일 경로 (data:, http:, https:, /, ./)
+- alt: 대체 텍스트
+- loading: 로딩 방식 지정 (eager, lazy)
+- width, height: 크기 지정
+
+<figure>
+- 이미지와 설명을 함께 묶는 태그
+<figcaption>
+- 이미지에 대한 설명 태그 (figure 내부에 위치)
+
+<svg>
+- 벡터 방식으로 이미지를 표현 (해상도 자유)
+- 내부에 <path/>, <circle/> 등으로 구성됨
+
+<picture>
+- 조건별 다른 이미지 로딩을 위해 사용하는 그룹 태그
+- 내부에 반드시 <img/> 포함 필요
+
+<source>
+- picture 내부에서 사용, srcset + media 속성 가짐
+
+[비디오 관련 태그]
+<video>
+- 비디오를 표시하는 태그
+- src: 파일 경로
+- controls: 컨트롤 바 표시
+- autoplay: 자동재생(정책상 이유로 사운드 포함시 자동실행 불가)
+- muted: 음소거
+<source>
+- 여러 포맷의 소스를 지정할 때 사용 (video 내부)
+
+[오디오 관련 태그]
+audio 태그도 video와 동일한 구조와 속성 사용
+- src, controls, autoplay, muted
+- <audio> 안에 <source/> 사용 가능
+
+[웹 내장 콘텐츠]
+<iframe>
+- 외부 웹페이지를 현재 문서 안에 삽입
+- src: 대상 웹페이지 주소
+-->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>20250516 수업내용</title>       
+        <!-- 멀티미디어 태그 -->
+        <title>20250516 수업정리</title>       
     </head>
     <body>
-        <!-- <iframe attibute=value></iframe> - 외부에 존재하는 웹페이지를 가져오는 태그 -->
-        <iframe src="https://www.inven.co.kr/"></iframe>
-        <!-- <picture> <source/> <source/> <img/> </picture> -->
-        <!-- picture 태그에 넣어서 이미지 표기 --> 
-        <picture>
-            <!-- srcset - 해당하는 이미지 작성 -->
-            <!-- media - 조건을 작성(미디어 쿼리) -->
-            <source srcset="idol1.jpg" media="(min-width:600px)"/>
-            <source srcset="idol4.avif" media="(min-width:500px)"/>
-            <img/>
-        </picture>
+            <h1>이미지 예시</h1>
+    <figure>
+      <img src="apple.jpg" alt="사과 이미지" width="200px" loading="lazy" />
+      <figcaption>맛있는 사과 사진</figcaption>
+    </figure>
 
-        <!-- <video src=""></video> - 영상 원본의 위치를 지정 -->
-        <!-- controls - 비디오 컨트롤 패널 생성 -->
-        <!-- autoplay - 자동재생, 정책상 이유로 사운드 포함시 자동실행 불가 --> 
-        <!-- muted - 음소거 --> 
-        <video controls autoplay muted>
-            <source src="./killer.mp3"/>
-            <source src="./killer.mp4"/>
-        </video>
-        <svg> <!-- 이미지 해상도를 극복하기 위해 사용하는 태그 -->
-            <circle cx="50" cy="50" r="40" fill="black"/> 
-        </svg>
-        <figure> <!-- img 태그에 추가적인 텍스트 설명을 붙이기위해서 hgroup처럼 감싸줌 -->
-            <img src="./idol1.jpg" alt="idol1.jpg만 존재합니다." loading="lazy"/>
-            <figcaption>아이돌 사진</figcaption> <!-- figure태그 안에 넣어 해당 이미지의 설명 작성 -->
-        </figure>        
+    <h2>SVG 이미지</h2>
+    <svg width="100" height="100">
+      <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+    </svg>
+
+    <h2>Picture 태그</h2>
+    <picture>
+      <source srcset="large.jpg" media="(min-width: 800px)" />
+      <source srcset="small.jpg" media="(max-width: 799px)" />
+      <img src="idol4.avif" alt="기본 이미지" />
+    </picture>
+
+    <h1>비디오 예시</h1>
+    <video width="320" height="240" controls>
+      <source src="killer.mp4" type="video/mp4" />
+      <source src="영상파일명.webm" type="video/webm" />
+    </video>
+
+    <h1>오디오 예시</h1>
+    <audio controls>
+      <source src="오디오파일명.mp3" type="audio/mpeg" />
+      <source src="오디오파일명.ogg" type="audio/ogg" />
+    </audio>
+
+    <h1>웹페이지 삽입 예시</h1>
+    <iframe src="https://www.inven.co.kr/" width="600" height="400"></iframe>
     </body>
 </html>

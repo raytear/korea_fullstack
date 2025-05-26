@@ -1,214 +1,87 @@
+<!-- 
+[CSS]
+- 꾸미기를 할 때 단순 텍스트로 작성하면 브라우저가 그려주는 기능  
+    1. 대상 선택(Selector) - 어떤 HTML 요소에 스타일을 줄 것인지 선택
+    2. 대상 옵션(Attribute) - 어떤 스타일을 줄 것인지 지정
+
+- CSS의 적용 우선순위(특성점수계산기)가 존재, Selector의 집중도에 따라서 우선순위 변경
+    1. Linking - 외부 CSS 파일을 link로 연결
+    2. Inline - 태그 안에 style 속성으로 직접 작성
+    3. Internal - style 태그 안에 작성
+-->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>20250523 수업내용</title>
-
         <!-- Cascade Style Sheet(CSS)-->
-        <!-- 꾸미기를 할 때 단순 텍스트로 작성하면 브라우저가 그려주는 기능 
-            
-            1. 대상 선택(Selector)
-            2. 대상 옵션(Attribute)
-
-            CSS의 적용 우선순위(특성점수계산기)가 존재, Selector의 집중도에 따라서 우선순위 변경 -->
-
-        <!--    1. Linking 
-                2. Inline 
-                3. Internal 순위로 사용     -->
-    
-        <!-- Internal - 태그로 CSS 작성 -->
-        <!-- <style>내용</style> - 이 내용은 CSS로 동작하게 함 -->
-        
-        <!-- <style>
-            .red {
-                background-color: red; 
-            }
-        </style> -->
+        <title>20250523 수업정리</title>
 
         <!-- Linking - 외부에 .css파일을 만들고 해당 파일에 Internal과 동일한 내용을 적고 가져와서 적용 -->
         <link rel="stylesheet" href="./index.css"/>
-
     </head>
     <body>
-        <!-- Inline - 대상 태그에 직접 속성값으로 css 작성-->
-        <div class="red" style="background-color: red;">Hello</div>
+        <h1>CSS</h1>
 
+        <h2>기본 작성 형식</h2>
+        <pre>
+        Selector {
+        Attribute-Name: Value;
+        Attribute-Name: Value;
+        }
+        </pre>
 
-        <!-- CSS 작성 방법 -->
-        <!-- Selector {
-            Attribute-Name: Value;
-            Attribute-Name: Value;
-        } -->
+        <h1>CSS Selector 종류</h1>
 
-        <!-- CSS Selector 종류
-            CSS에서 Inline 방식은 Selector와 상관 없이 "무조건" 우선순위가 높음
-            Linking 또는 Internal 방식에서 동일한 우선순위라면 아래에 있는게 우선순위가 높음 → 나중에 동작한게 앞서 동작한것을 "덮어쓰기" 하기 때문 -->
-        
-        <div class="red">Hello 2</div>
-        
-        <!-- Tag - 해당하는 "모든" 태그를 선택
-                div {}, 집중도 1 -->
+        <h2>기본 선택자</h2>
+        <ul>
+            <li><strong>Tag 선택자:</strong> div {} <!-- 집중도 1 --></li>
+            <li><strong>Class 선택자:</strong> .class {} <!-- 집중도 1 --></li>
+            <li><strong>Id 선택자:</strong> #id {} <!-- 집중도 1000 --></li>
+            <li><strong>전체 선택자:</strong> * {} <!-- 집중도 0 --></li>
+        </ul>
 
-        <!-- Class - class 속성에 해당 그룹이 존재하면 선택
-                .class {}, 집중도 1 -->
+        <h2>관계 선택자</h2>
+        <!-- 관계 선택자: 여러 선택자를 조합하여 관계 기반으로 특정 태그를 선택함 -->
+        <ul>
+            <li><strong>AND 선택자:</strong> div.red 또는 .a#b <!-- AND 관계 검색 - 두 선택자를 모두 가진 태그를 선택함 --> <!-- 집중도 1 --></li>
+            <li><strong>Have 관계:</strong> .a #b <!-- Have 관계 검색 - 앞의 선택자가 뒤의 선택자를 자손으로 포함할 경우 --> <!-- 집중도 1 --></li>
+            <li><strong>Have 직접 관계:</strong> .a > #b <!-- Have 직접 관계 검색 - 앞의 선택자가 바로 아래 자식 중 뒤의 선택자를 가진 경우 --> <!-- 집중도 1 --></li>
+            <li><strong>Sibing 관계:</strong> .a + .b <!-- Sibing 관계 검색 - 앞의 선택자 바로 다음에 오는 형제 요소 중 뒤 선택자를 가진 태그를 선택 --> <!-- 집중도 1 --></li>
+            <li><strong>Sibing 전체 관계:</strong> .a ~ .b <!-- Sibing 전체 관계 검색 - 앞 선택자 이후 나오는 모든 형제 중 뒤 선택자와 일치하는 태그 선택 --> <!-- 집중도 1 --></li>
+            <li><strong>OR 선택자:</strong> .a, .b <!-- OR 관계 검색 - ,로 구분된 각각의 선택자들을 모두 선택 --> <!-- 집중도 1 --></li>
+            <li><strong>속성 선택자:</strong>
+            <ul>
+                <li>[type] <!-- 속성 존재 검색 - 특정 속성이 존재하는 태그 선택 --> <!-- 집중도 1 --></li>
+                <li>[type="password"] <!-- 속성값 일치 검색 - 해당 속성과 값이 일치하는 태그 선택 --> <!-- 집중도 1 --></li>
+                <li>[value="test"] <!-- 집중도 1 --></li>
+            </ul>
+            </li>
+        </ul>
 
-        <!-- Id - id 속성에 해당하는 이름의 태그를 선택
-                #id {}, 집중도 1000 -->
+        <h2>특수 선택자 (가상 선택자)</h2>
+        <!-- 특수 선택자: 특정 조건이나 상태에 따라 태그를 선택하는 가상 선택자 -->
+        <ul>
+            <li><strong>nth 관련:</strong>
+            <!-- 자식 요소의 순서에 따라 선택 --> <!-- 집중도 1 -->
+            <ul>
+                <li>:first-child, :last-child <!-- 첫 번째 또는 마지막 자식 --></li>
+                <li>:nth-child(n), :nth-last-child(n) <!-- n번째 또는 뒤에서 n번째 자식 --></li>
+                <li>:first-of-type, :last-of-type <!-- 같은 태그 중 첫/마지막 자식 --></li>
+                <li>:nth-of-type(n), :nth-last-of-type(n) <!-- 같은 태그 중 n번째 또는 뒤에서 n번째 --></li>
+            </ul>
+            </li>
+            <li>:active <!-- 클릭된 순간을 감지 --> <!-- 집중도 1 --></li>
+            <li>:hover <!-- 마우스가 올라갔을 때 감지 --> <!-- 집중도 1 --></li>
+            <li>:focus <!-- 포커싱된 입력 요소 감지 --> <!-- 집중도 1 --></li>
+            <li>:visited, :link <!-- 방문한/방문하지 않은 링크 선택 --> <!-- 집중도 1 --></li>
+            <li>:has(selector) <!-- 특정 자식을 포함한 태그 선택 --> <!-- 집중도 1 --></li>
+            <li>:where(a, b) <!-- 여러 선택자 중 어느 하나라도 만족하면 선택, 집중도 낮음 --> <!-- 집중도 1 --></li>
+            <li>:is(a, b) <!-- 여러 선택자 중 하나라도 만족하면 선택, 집중도 높음 --> <!-- 집중도 100 --></li>
+            <li>:not(selector) <!-- 특정 선택자를 제외한 태그 선택 --> <!-- 집중도 1 --></li>
+        </ul>
 
-        <!-- Id - id 속성에 해당하는 이름의 태그를 선택
-                #id {}, 집중도 1000 -->
-
-        <!-- All - 전체 태그를 선택
-                * {}, 집중도 0 -->
-
-        <!-- AND 관계 검색 - 두개의 Selector를 모두 가진 태그를 선택
-                SelectorSelector {}, 집중도 1
-                .a#b -> Class a와 Id b를 가진 태그를 검색
-                div.red -> div 태그 중 red라는 class를 가진 태그를 검색 -->
-
-        <!-- Have 관계 검색 - 한개의 Selector 검색 후 해당 태그가 두번째 Selector를 소유한 대상을 선택
-                Selector Selector {}, 집중도 1
-                .a #b -> Id b를 가진 태그 중에 Class a를 가진 태그를 위에 가지고있는 태그를 선택-->
-            ※ 주의사항
-            a > b > c > d -> a d => O
-            a > b > c > d -> a b => O
-            갖고 있으면 검색
-
-        <!-- Have '직접' 관계 검색 - 한개의 Selector 검색 후 해당 태그가 두번째 Selector를 소유한 대상을 선택
-                Selector > Selector {}, 집중도 1
-                .a > #b -> Id b를 가진 태그 중에 Class a를 가진 태그를 위에 가지고있는 태그를 선택-->
-            ※ 주의사항
-            a > b > c > d -> a d => X
-            a > b > c > d -> a b => O
-            직계만 검색
-
-        <!-- Slibing 관계 검색 - 왼쪽 Selector를 검색한 후 그 뒤에 나오는 애 중 뒤에 Selector를 만족하는 태그를 검색
-                Selector + Selector {}, 집중도 1
-                .a + .b -> Class a를 가진 태그 뒤에 Class b를 가진 태그를 검색-->
-            ※ 주의사항
-            b(1) == a == b(2) == b(3) -> a + b -> b(2)
-
-        <!-- Slibing 전체 관계 검색 - 왼쪽 Selector를 검색한 후 그 뒤에 나오는 애 중 뒤에 Selector를 만족하는 태그들을 검색
-                Selector ~ Selector {}, 집중도 1
-                .a ~ .b -> Class a를 가진 태그 뒤에 Class b를 가진 태그들을 검색 -->
-            ※ 주의사항
-            b(1) == a == b(2) == b(3) -> a ~ b -> b(2), b(3)
-
-        <!-- 별개 검색(OR 검색) - ,를 기준으로 나뉜 검색을 따로 처리
-                Selector , Selecotr {}, 집중도 1
-                .a, .b -> Class a 태그 검색, Class b 태그 검색-->
-
-        <!-- 속성 검색 - 집중도 1
-                [Attribute-Name] {} - 해당하는 속성을 "가지고있는" 태그들을 검색
-                [Attribute-Name=Value] {} - 해당하는 속성을 "가지고있고" 그 값이 "원하는 값"인 태그들을 검색 -->
-
-        <!-- 특수 Selector(가상 선택자) - 집중도 1
-                일반 Selector와 다르게 공통 특징, 앞에 :을 붙임
-                :을 한개를 적느냐, 두개를 적느냐에 따라 약간의 차이점 -->
-
-        - 1. N번째 자식
-            :first-child
-                첫번째 자식
-            :last-child
-                마지막 자식
-            :nth-child(n)
-                n번째 자식
-                3n + 1 같이 n을 미지수로 넣어서 공식을 입력도 가능
-                또는 odd, even으로 홀수번째, 짝수번째 선택도 가능
-            :nth-last-child(n)
-                뒤에서 n번째 자식
-            :first-of-type
-                동일한 타입들 중에 처음에 오는 자식
-            :last-of-type
-                동일한 타입들 중에 마지막에 오는 자식
-            :nth-of-type(n)
-                동일한 타입들 중에 n번째에 오는 자식
-            :nth-last-of-type(n)
-                동일한 타입들 중에 뒤에서 n번째에 오는 자식
-
-        - 2. 활성 태그
-            :active
-                버튼 등을 클릭한 "순간"을 감지하는 가상 선택자
-
-        - 3. 호버 태그
-            :hover
-                마우스가 해당하는 태그 위에 올라간 "상태"를 감지하는 가상 선택자
-
-        - 4. 집중 태그
-            :focus
-                현재 입력중인(포커싱중인) 태그를 선택하는 가상 선택자
-
-        - 5. 링크 태그
-            :visited
-                방문한 링크
-            :link
-                방문하지 않은 링크
-
-        - 6. 소유 태그
-            :has(Selector)
-                해당 Selector를 소유한 태그를 선택하는 가상 선택자
-                기본적으로 그냥 Selector를 적으면 Have 관계 검색이 되고 
-                > Selector 라고 적으면 Have 직접 관계 검색이 된다
-
-            - 7. ANY 태그
-            :where(Selector, Selector)
-                안에 들어있는 Selecotr중 아무거나 선택된 애들을 선택
-                집중도 1
-
-            :is(Selector, Selector)
-                안에 들어있는 Selecotr중 아무거나 선택된 애들을 선택
-                집중도 100
-
-        - 8. NOT 태그
-            :not(Selector)
-                안에 들어있는 Selector를 제외한 반대 선택을하는 가상 선택자
-
-        <input name="id"/>
-        <input type="password"/>
-        <input type="password"/>
-        <input class="red"/>
-        <input class="blue"/>
-
-
-        <table>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>7</td>
-                    <td>8</td>
-                    <td>9</td>
-                    <td>10</td>
-                </tr>
-                <tr>
-                    <td>11</td>
-                    <td>12</td>
-                    <td>13</td>
-                    <td>14</td>
-                    <td>15</td>
-                </tr>
-                <tr>
-                    <td>16</td>
-                    <td>17</td>
-                    <td>18</td>
-                    <td>19</td>
-                    <td>20</td>
-                </tr>
-                <tr>
-                    <td>21</td>
-                    <td>22</td>
-                    <td>23</td>
-                    <td>24</td>
-                    <td>25</td>
-                </tr>
-            </tbody>
-        </table>
+        <p><strong>주의:</strong> Inline 방식은 항상 최우선. 동일한 방식 내에서는 나중에 선언된 것이 우선됨</p>
     </body>
 </html>
