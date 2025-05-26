@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>20250526 수업내용 - CSS 속성(Attribute)</title>
+        <link rel="stylesheet" href="./index.css"/>
+    </head>
+    <body>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ab asperiores, veniam tempora quam ea quaerat sint dicta minus explicabo saepe repudiandae ad provident exercitationem? Voluptates illum illo distinctio corrupti?
+        </div>
+        <div>
+            <a href="#">링크</a>
+        </div>
+        <!-- Attribute - Selector로 선택한 태그 "내부에" 원하는 속성 디자인을 가함-->
+        <!-- Selector - "해당하는 태그"를 선택하는게 아니라 "해당하는 태그의 범위"를 선택-->
+        <h1 id="test">폰트 테스트
+            <span>새로운 태그</span> <!-- 상위 태그에 적용된 정보는 하위 태그에 자동 적용 -->
+        </h1>
+        <h1>폰트 테스트</h1>
+        
+        <!-- 속성 작성법
+            - AttributeName: Value; 식으로 ;으로 구분해서 작성
+            - 이름은 snake-case 로 작성 
+            - ex) background color → background-color
+                  font size → font-size -->
+
+        <!-- 글자 관련 CSS 속성 -->
+        # font-family
+        - 폰트 변경 속성
+        - 작성법 - font-family: 폰트이름, 폰트이름;
+        - 주의사항
+        당연히 "현재 PC"에 설치되지 않은 폰트는 적용이 안된다
+        보편적으로 설치된 폰트를 많이 이용
+
+      설치된 기본 폰트를 사용하거나 @font-face와 함께 이용
+
+  @font-face
+    속성값이 아님
+    하나의 그룹으로써 외부에 Network에 존재하는 폰트를 자동으로 다운받아서 이용하게하는 기능
+    작성법
+      @font-face {
+        font-family: '폰트이름';
+        src: url( 외부폰트 URL );
+      }
+    </body>
+</html>

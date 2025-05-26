@@ -1,17 +1,33 @@
 <!DOCTYPE html>
-<html lang="KO">
+<!--
+- HTML은 어떤 태그를 배우는 것이 아니라, HTML의 구성과 원리를 이해하는 것이 중요
+- HTML이란?
+  → 정보를 손쉽게 보여주기 위한 문법
+
+- HTML의 태생적 특징
+  → 정보 전달의 효율성을 위해 태어난 문법이므로 규칙이 존재하고 엄격함
+  → ex) <html> 로 시작했으면 반드시 </html>로 끝나야 하며, 틀리면 오류 발생
+
+- HTML 규칙 요약
+  1. 파일 확장자는 .html 이어야 함
+  2. 첫 줄은 <!DOCTYPE html>로 시작해야 함
+  3. 모든 내용은 태그(<tag></tag> 또는 <tag/>)로 구성
+  4. 태그는 정해진 이름만 사용 가능하고, 각기 역할이 다름
+  5. 태그는 속성(attribute)을 통해 추가 동작 가능
+     ex) <html lang="ko"></html>
+  6. HTML 구조: <html> → <head> (웹 정보) + <body> (화면 내용)
+  7. 태그 밖의 텍스트는 단순 텍스트로 표현됨
+  8. 연속된 공백문자는 하나의 공백으로 처리됨 → 의도된 공백은 &nbsp; 사용
+-->
+<html lang="en">
     <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>20250513 수업정리</title>
+        <!-- HTML 기초 -->
     </head>
-            <body>
-            <div on="1234"> <!-- 오류 -->
-                45678
-            </div>
-            <div>
-                안녕하세요
-                hi
-            </div>
-            <div>
-                Hi
-            </div>
-        </body>
+    <body>
+        <p>이름: 홍길동</p>
+        <p>성별: 여성</p>
+    </body>
 </html>

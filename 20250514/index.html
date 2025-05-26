@@ -1,0 +1,84 @@
+<!--
+- HTML 태그 내부에 head와 body 태그 있음
+
+[head 태그]
+- 현재 웹페이지를 구성하는 정보를 담는 태그들을 포함
+- 웹페이지의 "구성 정보"를 알려주는 영역
+
+[title]
+- 웹페이지 제목을 지정하는 태그
+ex) <title>웹페이지 제목</title>
+
+[meta]
+- 메타데이터(metadata)를 표기하는 태그 (웹페이지 정보)
+- 태그 자체로 동작하지 않으며 속성으로 정보 제공
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>20250514 수업정리</title>
+        <!-- head 태그 내부에 들어가는 태그들 -->
+        
+        <!--
+        [meta 주요 속성]
+        1. charset
+        - 문자 인코딩 방식 지정
+        - ex) <meta charset="UTF-8"/>
+
+        2. name="description"
+        - 페이지 설명
+        - ex) <meta name="description" content="설명"/>
+
+        3. name="author"
+        - 페이지 작성자
+        - ex) <meta name="author" content="이름"/>
+
+        4. name="copyright"
+        - 저작권 정보
+        - ex) <meta name="copyright" content="회사 이름"/>
+
+        5. name="robots"
+        - 검색엔진 노출 여부 지정
+        - ex) <meta name="robots" content="index, follow"/>
+
+        6. name="keywords"
+        - 페이지 키워드
+        - ex) <meta name="keywords" content="html, meta, tag"/>
+
+        7. name="revisit-after"
+        - 검색 재방문 주기
+        - ex) <meta name="revisit-after" content="7 days"/>
+
+        8. name="rating"
+        - 콘텐츠 등급 지정 (general / mature)
+        - ex) <meta name="rating" content="general"/>
+        -->
+        
+        <meta name="description" content="HTML head 태그 설명" />
+        <meta name="author" content="홍길동" />
+        <meta name="copyright" content="MyCompany" />
+        <meta name="robots" content="index, follow" />
+        <meta name="keywords" content="HTML, meta, head, tag" />
+        <meta name="revisit-after" content="7 days" />
+        <meta name="rating" content="general" />
+        <link rel="icon shortcut" href="favicon.ico" />
+        <link rel="stylesheet" href="style.css" />
+
+        <!-- OpenGraph meta 태그 -->
+        <meta property="og:title" content="HTML 예제 페이지" />
+        <meta property="og:description" content="head 태그 구성 예시" />
+        <meta property="og:image" content="image.png" />
+        <meta property="og:url" content="https://example.com" />
+
+        <!-- Twitter meta 태그 -->
+        <meta name="twitter:title" content="HTML 예제 페이지" />
+        <meta name="twitter:description" content="head 태그 구성 예시" />
+        <meta name="twitter:image" content="image.png" />
+        <meta name="twitter:url" content="https://example.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+    </head>
+    <body></body>
+</html>
