@@ -1,0 +1,158 @@
+<!-- 
+[레이아웃(영역) 관련 속성]
+- 텍스트를 가공하는 속성보다 다른걸 가공하는 속성이 필요해짐
+- 멀티미디어, 레이아웃 등을 제어하기 위한 속성
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- 레이아웃(영역) 관련 속성 -->
+        <title>20250527 수업정리</title>
+        <link rel="stylesheet" href="./index_0527.css"/>
+    </head>
+    <body>
+        <h1>CSS 속성 (Attribute)</h1>
+
+        <h2>레이아웃 관련 속성</h2>
+
+        <h3>width, height</h3>
+        <p>태그의 가로/세로 크기 지정</p>
+        <ul>
+            <li>작성법: <code>width: 크기; height: 크기;</code></li>
+            <li><code>span</code>은 기본적으로 inline이므로 크기 적용되지 않음</li>
+            <li><code>div</code>는 block 요소이므로 영역 확보 가능</li>
+        </ul>
+
+        <h3>display</h3>
+        <p>태그의 영역 방식 정의</p>
+        <ul>
+            <li>inline, block, inline-block, none</li>
+            <li>inline-block은 공백 조심 (문자 간격 때문)</li>
+        </ul>
+
+        <h3>padding, margin</h3>
+        <p>태그 내부/외부 여백 지정</p>
+        <ul>
+            <li><code>padding:</code> 내부 여백, <code>margin:</code> 외부 여백</li>
+            <li>방향 지정 가능: <code>padding-left</code>, <code>margin-top</code> 등</li>
+            <li><code>margin: auto;</code>는 좌우 자동 여백 → 중앙 정렬에 사용</li>
+        </ul>
+
+        <h3>border, outline</h3>
+        <p>테두리 설정</p>
+        <ul>
+            <li>작성법: <code>border: 종류 두께 색상;</code></li>
+            <li>종류: dashed, solid 등</li>
+            <li><code>none</code>으로 제거 가능</li>
+        </ul>
+
+        <h3>box-sizing</h3>
+        <p>크기 계산 기준 설정</p>
+        <ul>
+            <li>content-box: padding은 크기 외로 계산</li>
+            <li>border-box: padding, border 포함 크기로 계산</li>
+        </ul>
+
+        <h3>background-color</h3>
+        <p>배경색 지정</p>
+
+        <h3>background-image</h3>
+        <p>배경 이미지 또는 그라디언트 지정</p>
+        <ul>
+            <li><code>url('경로')</code> 방식</li>
+            <li><code>linear-gradient</code>, <code>radial-gradient</code> 가능</li>
+        </ul>
+
+        <h3>background-size</h3>
+        <p>배경 이미지 크기 설정</p>
+        <ul>
+            <li>cover: 큰 축 맞춤</li>
+            <li>contain: 작은 축 맞춤</li>
+        </ul>
+
+        <h3>border-radius</h3>
+        <p>테두리 둥글기 설정</p>
+
+        <h3>overflow</h3>
+        <p>내용이 넘칠 때 처리 방식</p>
+        <ul>
+            <li>visible, hidden, scroll</li>
+        </ul>
+
+        <h3>object-fit</h3>
+        <p>미디어(이미지/비디오 등) 크기 조절 방식</p>
+        <ul>
+            <li>cover, contain, fill, none, scale-down</li>
+        </ul>
+
+        <h3>left, right, top, bottom</h3>
+        <p>위치 이동</p>
+        <ul>
+            <li>해당 방향 기준선에서 반대 방향으로 이동</li>
+            <li>예: <code>left: 50px</code> → 왼쪽 기준선에서 오른쪽으로 50px 이동</li>
+        </ul>
+
+        <h3>position</h3>
+        <p>기준선 위치 지정</p>
+        <ul>
+            <li>static: 기본</li>
+            <li>relative: 현재 위치 기준</li>
+            <li>absolute: 상위 기준선 기준</li>
+            <li>fixed: 브라우저 화면 기준</li>
+            <li>sticky: 특정 위치 도달 시 고정</li>
+        </ul>
+
+        <h3>visibility, opacity, z-index</h3>
+        <p>가시성 제어</p>
+        <ul>
+            <li>visibility: visible / hidden</li>
+            <li>opacity: 0.0 ~ 1.0 (투명도)</li>
+            <li>z-index: 앞뒤 우선순위 설정</li>
+        </ul>
+
+        <h3>transform</h3>
+        <p>요소 변형</p>
+        <ul>
+            <li>rotate(각도), translate(x,y), scale(비율), perspective(원근)</li>
+        </ul>
+
+        <h3>float</h3>
+        <p>요소를 좌/우로 띄움</p>
+        <ul>
+            <li>left, right</li>
+        </ul>
+
+        <h3>clear</h3>
+        <p>float 해제</p>
+        <ul>
+            <li>left, right, both</li>
+        </ul>
+
+        <h3>cursor</h3>
+        <p>마우스 포인터 형태 지정</p>
+
+        <h3>user-select</h3>
+        <p>텍스트 선택 가능 여부 지정</p>
+
+        <h3>box-shadow, text-shadow</h3>
+        <p>그림자 생성</p>
+        <ul>
+            <li>작성법: <code>box-shadow: 거리 색상 크기;</code></li>
+        </ul>
+
+        <h3>filter</h3>
+        <p>이미지 효과 적용</p>
+        <ul>
+            <li>blur, grayscale, sepia, contrast 등</li>
+        </ul>
+
+        <h2>예시</h2>
+
+        <div class="example-box">
+            <img src="https://mblogthumb-phinf.pstatic.net/MjAyMjA3MTdfNjAg/MDAxNjU4MDQ3OTE0Njc2.wEtOsz_izca78aX3gttqZZs7rjop5QtqbS4V-z6OCv4g.ohyK5AyXvMo9ta6nxxvyT995gEpQnJtWLeSbdsNGIbIg.JPEG.niceguy00/Seul%EC%BB%B4_%EC%A0%9C%EB%8B%88%EC%9D%B8%EC%8A%A4%ED%83%80192.jpg?type=w800" alt="예시 이미지">
+        </div>
+    </body>
+</html>
