@@ -1,0 +1,49 @@
+
+/* body>div{
+    transition: transform 2s linear 0s;
+    transform: rotateZ(0deg);
+}
+body>div:hover {
+    transform: rotateZ(360deg);
+} */
+
+/* * { padding: 0; margin: 0; box-sizing: border-box; }
+.input.text-type {
+    width: 500px;
+}
+.input.text-type>input[type=text] {
+    outline: none; border: 0;
+    width:100%
+    animation: textAni 0.5s linear 0s normal infinite running;
+}
+.input.text-type>.underline {
+    position: relative;
+    width: 100%;
+    height: 2px;
+}
+.input.text-type>.underline.def {
+    bottom: 2px;
+    background-color: gray;
+}
+.input.text-type>.underline.over {
+    transition: width 0.25s ease 0s;
+    width: 0%;
+    bottom: 4px;
+    background-color: aqua;
+}
+.input.text-type>input[type=text]:focus~.underline.over {
+    width: 100%;
+} */
+
+
+/* button {
+    background-color: hsl(182, 100%, 50%);
+    transition: all 5s cubic-bezier(0.6, -0.28, 0.735, 0.045) 0s;
+    position: relative;
+    left: 0px;
+}
+
+button:hover {
+    background-color: hsl(182, 100%, 40%);
+    left: 500px;
+} */
