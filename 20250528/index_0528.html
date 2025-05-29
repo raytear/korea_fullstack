@@ -1,3 +1,9 @@
+<!--
+[Animation 속성]
+- 기본 디자인에서 화려함을 더해 사용자 경험을 높이기 위해 Animation 속성을 활용
+- 단순한 변화에 생동감을 부여할 수 있으며, 그중 transition과 animation이 가장 핵심
+-->
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,46 +14,92 @@
         <link rel="stylesheet" href="./index_0528.css"/>
     </head>
     <body>
-        <div class="indicator">
-            <div class="indicator-item-box lv1">
-                <div class="indicator-item"></div>
-            </div>
-            <div class="indicator-item-box lv2">
-                <div class="indicator-item"></div>
-            </div>
-            <div class="indicator-item-box lv3">
-                <div class="indicator-item"></div>
-            </div>
-            <div class="indicator-item-box lv4">
-                <div class="indicator-item"></div>
-            </div>
-            <div class="indicator-item-box lv5">
-                <div class="indicator-item"></div>
-            </div>
-            <div class="indicator-item-box lv6">
-                <div class="indicator-item"></div>
-            </div>
-            <div class="indicator-item-box lv7">
-                <div class="indicator-item"></div>
-            </div>
-            <div class="indicator-item-box lv8">
-                <div class="indicator-item"></div>
+        <h1>Animation 속성</h1>
+
+        <h2>간단 Animation: transition</h2>
+        <pre><code><!-- transition: 속성 변화 시 서서히 변화 적용 -->
+        transition: background-color 1s ease 0s;
+        transition: width 0.5s linear 0s;
+        transition: all 0.3s ease-in-out 0s;
+        </code></pre>
+        <ul>
+            <li><code>transition</code>: 대상 시간 공식 딜레이;</li>
+            <li>시간 단위 예시:
+            <ul>
+                <li><code>1s</code> <!-- 1초 --> </li>
+                <li><code>0.5s</code> <!-- 0.5초 --> </li>
+            </ul>
+            </li>
+            <li>공식 예시:
+            <ul>
+                <li><code>linear</code> <!-- 선형: 일정한 속도 --> </li>
+                <li><code>ease-in</code> <!-- 느리게 시작 --> </li>
+                <li><code>ease-out</code> <!-- 느리게 끝남 --> </li>
+                <li><code>ease-in-out</code> <!-- 느림 → 빠름 → 느림 --> </li>
+                <li><code>cubic-bezier()</code> <!-- 사용자 정의 곡선 --> </li>
+            </ul>
+            </li>
+            <li>딜레이: <code>0s</code> <!-- 지연 없음 --> </li>
+            <li><strong>주의:</strong> 숫자가 아닌 속성(예: font-name)은 서서히 변화 불가</li>
+        </ul>
+
+        <h2>복잡 Animation: keyframes + animation</h2>
+
+        <h3>@keyframes</h3>
+        <pre><code><!-- @keyframes: 애니메이션 단계 지정 -->
+        @keyframes move {
+        0%   { left: 0px; }
+        50%  { left: 250px; }
+        100% { left: 0px; }
+        }
+        </code></pre>
+
+        <h3>animation</h3>
+        <pre><code><!-- animation: keyframes 기반 애니메이션 실행 -->
+        animation: move 3s ease-in-out 0s alternate infinite running;
+        </code></pre>
+        <ul>
+            <li><code>animation</code>: 이름 시간 공식 딜레이 방향 횟수 상태</li>
+            <li>방향:
+            <ul>
+                <li><code>normal</code> <!-- 정방향 --> </li>
+                <li><code>alternate</code> <!-- 왕복 --> </li>
+                <li><code>reverse</code> <!-- 역방향 --> </li>
+                <li><code>alternate-reverse</code> <!-- 왕복 역방향 시작 --> </li>
+            </ul>
+            </li>
+            <li>횟수 예시:
+            <ul>
+                <li><code>1</code> <!-- 1회 실행 --> </li>
+                <li><code>infinite</code> <!-- 무한 반복 --> </li>
+            </ul>
+            </li>
+            <li>상태:
+            <ul>
+                <li><code>running</code> <!-- 실행 중 --> </li>
+                <li><code>paused</code> <!-- 일시 정지 --> </li>
+            </ul>
+            </li>
+        </ul>
+
+        <h2>Animation 속성 예시</h2>
+
+        <h3>태양계 회전 예시</h3>
+        <div>
+            <img src="https://www.pngarts.com/files/10/Earth-PNG-Image-Transparent-Background.png" alt="지구">
+            <div>
+            <img src="https://www.pngarts.com/files/4/Sun-PNG-Image-Transparent.png" alt="태양">
             </div>
         </div>
 
-        <!-- <div>
-            <img src="https://www.pngarts.com/files/10/Earth-PNG-Image-Transparent-Background.png"/>
-            <div>
-                <img src="https://www.pngarts.com/files/4/Sun-PNG-Image-Transparent.png"/>
-            </div>
-        </div> -->
+        <h3>입력창 애니메이션</h3>
+        <div class="input text-type">
+            <input type="text">
+            <div class="underline def"></div>
+            <div class="underline over"></div>
+        </div>
 
-        <!-- <div class="input text-type">
-        <input type="text"/>
-        <div class="underline def"></div>
-        <div class="underline over"></div>
-        </div> -->
-
-        <!-- <button>버튼</button> -->
+        <h3>버튼 애니메이션</h3>
+        <button>버튼</button>
     </body>
 </html>

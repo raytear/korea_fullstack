@@ -1,0 +1,111 @@
+<!--
+[Flex & Grid]
+- 애니메이션으로 동적인 페이지를 만들다 보면 태그를 원하는 위치에 두기 위해
+- position, left, right, top, bottom과 함께 레이아웃 속성인 flex, grid를 자주 사용하게 됨
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- 레이아웃 속성: Flex & Grid -->
+        <title>20250529 수업정리</title>
+        <link rel="stylesheet" href="./index_0529.css"/>
+    </head>
+    <body>
+        <h1>레이아웃 속성: Flex & Grid</h1>
+
+        <h2>Flex 예시</h2>
+        <p><strong>Flex</strong>: 유연한 레이아웃 배치를 위한 속성</p>
+        <pre><code>/* .row: Flex container 설정 */
+        .row {
+        width: 150px;
+        height: 150px;
+        background-color: greenyellow;
+        display: flex; /* flex 레이아웃 지정 */
+        flex-direction: row; /* 주 축 방향: 가로 */
+        flex-wrap: nowrap;   /* 넘침 방지 없음 */
+        }
+
+        /* .item: Flex item 설정 */
+        .item {
+        border: 1px black solid;
+        /* flex-grow: 1; */
+        /* flex-shrink: 0; */
+        }
+        </code></pre>
+
+        <h3>Flex 주요 속성</h3>
+        <ul>
+            <li><code>display: flex</code> <!-- 부모를 Flex container로 설정 --></li>
+            <li><code>flex-direction: row</code> <!-- 아이템 가로 배치 --></li>
+            <li><code>flex-wrap: nowrap</code> <!-- 줄바꿈 없음 --></li>
+            <li><code>justify-content: center</code> <!-- 메인 축 기준 중앙 정렬 (주석처리됨) --></li>
+            <li><code>align-items: center</code> <!-- 교차 축 기준 중앙 정렬 (주석처리됨) --></li>
+        </ul>
+
+        <h2>Grid 예시</h2>
+        <p><strong>Grid</strong>: 2차원 격자 배치를 위한 속성</p>
+        <pre><code>/* .container: Grid container 설정 */
+        .container {
+        width: 50vw;
+        height: 150px;
+        background-color: yellow;
+        display: grid; /* grid 레이아웃 지정 */
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+
+        /* .id_01: span을 활용한 행 확장 */
+        .id_01 {
+        grid-row-end: span 3;
+        }
+        </code></pre>
+
+        <h3>Grid 주요 속성</h3>
+        <ul>
+            <li><code>display: grid</code> <!-- Grid container 지정 --></li>
+            <li><code>grid-template-columns: repeat(auto-fill, minmax(150px, 1fr))</code>
+            <!-- 열 자동 채움 + 최소크기 설정 --></li>
+            <li><code>grid-row-end: span 3</code> <!-- 해당 항목을 세 행(span) 차지하게 설정 --></li>
+        </ul>
+
+        <h2>실습 예시</h2>
+        <h3>Flex 레이아웃</h3>
+        <div class="row">
+            <div class="item id_01">1</div>
+            <div class="item id_02">2</div>
+            <div class="item id_03">3</div>
+            <div class="item id_04">4</div>
+            <div class="item id_05">5</div>
+            <div class="item id_06">6</div>
+            <div class="item id_07">7</div>
+            <div class="item id_08">8</div>
+            <div class="item id_09">9</div>
+        </div>
+
+        <h3>Grid 레이아웃</h3>
+        <div class="container">
+            <div class="item id_01">1</div>
+            <div class="item id_02">2</div>
+            <div class="item id_03">3</div>
+            <div class="item id_04">4</div>
+            <div class="item id_05">5</div>
+            <div class="item id_06">6</div>
+            <div class="item id_07">7</div>
+            <div class="item id_08">8</div>
+            <div class="item id_09">9</div>
+        </div>
+
+        <h2>추가: Emmet 문법</h2>
+        <p>HTML 구조를 빠르게 생성할 수 있는 단축 문법, VSCode 등에서 지원</p>
+        <pre>/* div.container>div.item.id_${$}*9 */</pre>
+        <ul>
+            <li><code>div.container</code>: class가 container인 div 생성</li>
+            <li><code>></code>: 자식 요소로 연결</li>
+            <li><code>div.item.id_${$}</code>: item 클래스와 id_01 ~ id_09까지 자동 생성</li>
+            <li><code>*9</code>: 위 구조를 9번 반복</li>
+        </ul>
+        <p>위 Emmet 구문을 입력 후 <strong>Tab</strong>을 누르면 자동 완성</p>
+    </body>
+</html>
