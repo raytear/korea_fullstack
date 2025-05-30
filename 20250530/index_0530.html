@@ -1,0 +1,91 @@
+<!-- 
+[CSS 확장]
+- 변수, 레이어, 반응형 등을 포함한 CSS 확장
+- CSS 확장 기능: 변수, 덮어쓰기, 반응형
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 외부 CSS 파일 연결 -->
+    <title>20250530 수업정리</title>
+    <link rel="stylesheet" href="./index_0530.css">
+</head>
+<body>
+    <h1>CSS 확장 기능: 변수, 덮어쓰기, 반응형</h1>
+
+    <!-- CSS 변수 설명 -->
+    <h2>CSS 변수</h2>
+    <pre><code>:root {
+    --brand-color: hsl(182, 83%, 43%);
+    }
+
+    h1 {
+    color: var(--brand-color);
+    }</code></pre>
+    <p><strong>--brand-color</strong>는 페이지 전체에서 사용할 수 있는 변수이며, <code>var()</code> 함수로 값을 불러올 수 있다.</p>
+
+    <!-- !important 설명 -->
+    <h2>덮어쓰기</h2>
+    <h3>!important</h3>
+    <pre><code>h1 {
+    color: red !important;
+    }</code></pre>
+    <p>강제적으로 해당 스타일을 적용</p>
+
+    <!-- @layer 설명 -->
+    <h3>@layer</h3>
+    <pre><code>@layer base, theme, component;
+
+    @layer base {
+    h1 { color: red; }
+    }
+    @layer component {
+    h1 { color: blue; }
+    }</code></pre>
+    <p><code>@layer</code>는 CSS 렌더링 우선순위를 명시적으로 조절할 수 있게 해준다.</p>
+
+    <!-- 미디어 쿼리 설명 -->
+    <h2>반응형 웹: Media Query</h2>
+    <pre><code>@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+    }</code></pre>
+    <p>브라우저 화면 너비가 600px 이하일 때 적용되는 조건부 스타일</p>
+
+    <!-- 컨테이너 쿼리 설명 -->
+    <h2>Container Query</h2>
+    <pre><code>div {
+    container-type: inline-size;
+    container-name: exampleContainer;
+    }
+
+    @container exampleContainer (min-width: 500px) {
+    h1 {
+        color: green;
+    }
+    }</code></pre>
+    <p>해당 div 내부 크기가 500px 이상일 경우에만 <code>h1</code> 색상을 green으로 변경</p>
+
+    <!-- container 단위 설명 -->
+    <h2>단위</h2>
+    <ul>
+        <li><code>cqw</code>: container width의 1%</li>
+        <li><code>cqh</code>: container height의 1%</li>
+        <li><code>cqmin</code>: width, height 중 작은 값의 1%</li>
+        <li><code>cqmax</code>: width, height 중 큰 값의 1%</li>
+    </ul>
+
+    <!-- 실제 HTML 구조 예시 -->
+    <h2>예시 HTML</h2>
+    <div>
+        <h1>Hello</h1>
+        <h2>Hello</h2>
+    </div>
+    <h1>Hello</h1>
+</body>
+</html>
